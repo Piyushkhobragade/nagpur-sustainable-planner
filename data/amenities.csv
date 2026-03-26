@@ -1,0 +1,21 @@
+type,name,latitude,longitude,ward,capacity
+School,Dharampeth High School,21.1365,79.0742,Dharampeth,800
+School,Sadar Public School,21.1548,79.0885,Sadar,750
+School,Civil Lines Vidyalaya,21.1620,79.0821,Civil Lines,600
+School,Laxmi Nagar School,21.1350,79.1115,Laxmi Nagar,700
+School,Gandhibagh Boys School,21.1495,79.0758,Gandhibagh,900
+School,Jaripatka English School,21.1491,79.1022,Jaripatka,650
+Hospital,Orange City Hospital,21.1370,79.0748,Dharampeth,300
+Hospital,Alexis Hospital,21.1210,79.0640,Manish Nagar,400
+Hospital,NMC General Hospital,21.1485,79.0762,Gandhibagh,500
+Hospital,Lata Mangeshkar Hospital,21.1628,79.0815,Civil Lines,350
+Hospital,Wockhardt Hospital,21.1544,79.0892,Sadar,250
+Petrol Pump,HPCL Dharampeth,21.1368,79.0730,Dharampeth,0
+Petrol Pump,BPCL Sadar,21.1535,79.0870,Sadar,0
+Petrol Pump,IndianOil Laxmi Nagar,21.1338,79.1102,Laxmi Nagar,0
+Petrol Pump,HPCL Kalamna,21.1755,79.1148,Kalamna,0
+Park,Ambazari Garden,21.1290,79.0660,Manish Nagar,0
+Park,Seminary Hills Park,21.1650,79.0790,Civil Lines,0
+Park,Futala Lake Garden,21.1195,79.0815,Manish Nagar,0
+Park,Gandhi Sagar Park,21.1500,79.0850,Sitabuldi,0
+Park,Raman Science Centre,21.1610,79.0835,Civil Lines,0
