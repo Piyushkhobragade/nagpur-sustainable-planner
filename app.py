@@ -203,7 +203,7 @@ if _plan_is_stale:
 # ── Tabs ────────────────────────────────────────────────────────────────────
 plan = st.session_state.plan
 
-tab1, tab2, tab3, tab4 = st.tabs(["📋 Report", "📊 Charts", "🗺 Map", "📥 Export"])
+tab1, tab2, tab3 = st.tabs(["📋 Report", "📊 Charts", "🗺 Map"])
 
 # ============================================================
 # TAB 1 - REPORT
