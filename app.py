@@ -109,32 +109,22 @@ st.markdown("""
         background: #ffffff !important;
     }
     
-    /* ============================================================
-       EXPORT SECTION - FORCE DARK TEXT
-       ============================================================ */
-    /* Code block (summary text) */
-    .stCodeBlock,
-    .stCodeBlock pre,
-    .stCodeBlock code,
-    .stMarkdown pre,
-    .stMarkdown code,
-    [data-testid="stCodeBlock"] pre,
-    [data-testid="stCodeBlock"] code {
-        color: #1e2a1e !important;
-        background: #f5f5f5 !important;
-    }
-    
-    /* Download buttons - Keep white text on green */
-    .stDownloadButton button {
-        color: white !important;
-    }
-    
-    /* Text area for summary */
-    .stTextArea textarea,
-    .stTextArea [data-baseweb="textarea"] {
-        color: #1e2a1e !important;
-        background: #ffffff !important;
-    }
+   /* Export Tab - Force white text on light background */
+[data-testid="stTabs"] [role="tabpanel"] .stMarkdown h3,
+[data-testid="stTabs"] [role="tabpanel"] .stMarkdown p,
+[data-testid="stTabs"] [role="tabpanel"] .stMarkdown div,
+[data-testid="stTabs"] [role="tabpanel"] .stCodeBlock,
+[data-testid="stTabs"] [role="tabpanel"] .stCodeBlock pre,
+[data-testid="stTabs"] [role="tabpanel"] .stCodeBlock code {
+    color: white !important;
+    background: #1e4a3a !important;
+}
+
+/* Download buttons - Keep as is */
+.stDownloadButton button {
+    color: white !important;
+    background: linear-gradient(135deg, #51cf66, #2b8c4a) !important;
+}
     
     /* Headings in export tab */
     .stMarkdown h3 {
