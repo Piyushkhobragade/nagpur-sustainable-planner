@@ -72,9 +72,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.set_page_config(page_title="Nagpur Sustainable Planner", page_icon="🌿", layout="wide")
-st.markdown('<style>input,select,[data-baseweb="select"] div{color:#000000!important;background:#ffffff!important;}</style>', unsafe_allow_html=True)
-
 # ── Apply CSS ──────────────────────────────────────────────────────────────
 st.markdown(f"<style>{PROFESSIONAL_CSS}</style>", unsafe_allow_html=True)
 
