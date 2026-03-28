@@ -348,76 +348,76 @@ with tab3:
 # ============================================================
 # TAB 4 - EXPORT
 # ============================================================
-with tab4:
-    if plan is None:
-        st.info("Generate a plan first")
-    else:
-        st.markdown("### 📥 Download Plan")
+# with tab4:
+#     if plan is None:
+#         st.info("Generate a plan first")
+#     else:
+#         st.markdown("### 📥 Download Plan")
         
-        # Create export data
-        export_data = {
-            "Total Area (sq ft)": plan.total_area,
-            "Location": plan.location,
-            "Development Type": plan.dev_type,
-            "Priority": plan.priority,
-            "Residential Area (sq ft)": plan.residential_area,
-            "Green Space (sq ft)": plan.green_space,
-            "Road Area (sq ft)": plan.road_area,
-            "Population": plan.population,
-            "Houses": plan.houses,
-            "Density (ppsf)": plan.density_ppsf,
-            "Schools": plan.schools,
-            "Hospitals": plan.hospitals,
-            "Parks": plan.parks,
-            "Petrol Pumps": plan.petrol_pumps,
-            "Community Halls": plan.community_halls,
-            "Green Space %": plan.green_space_pct,
-            "Sustainability Score": plan.sustainability_score,
-            "Grade": plan.grade,
-            "Compliant": "Yes" if plan.compliant else "No",
-        }
+#         # Create export data
+#         export_data = {
+#             "Total Area (sq ft)": plan.total_area,
+#             "Location": plan.location,
+#             "Development Type": plan.dev_type,
+#             "Priority": plan.priority,
+#             "Residential Area (sq ft)": plan.residential_area,
+#             "Green Space (sq ft)": plan.green_space,
+#             "Road Area (sq ft)": plan.road_area,
+#             "Population": plan.population,
+#             "Houses": plan.houses,
+#             "Density (ppsf)": plan.density_ppsf,
+#             "Schools": plan.schools,
+#             "Hospitals": plan.hospitals,
+#             "Parks": plan.parks,
+#             "Petrol Pumps": plan.petrol_pumps,
+#             "Community Halls": plan.community_halls,
+#             "Green Space %": plan.green_space_pct,
+#             "Sustainability Score": plan.sustainability_score,
+#             "Grade": plan.grade,
+#             "Compliant": "Yes" if plan.compliant else "No",
+#         }
         
-        df_export = pd.DataFrame(list(export_data.items()), columns=["Metric", "Value"])
+#         df_export = pd.DataFrame(list(export_data.items()), columns=["Metric", "Value"])
         
-        col1, col2 = st.columns(2)
-        with col1:
-            csv = df_export.to_csv(index=False).encode()
-            st.download_button("⬇️ Download CSV", csv, f"plan_{plan.location}.csv", "text/csv", use_container_width=True)
+#         col1, col2 = st.columns(2)
+#         with col1:
+#             csv = df_export.to_csv(index=False).encode()
+#             st.download_button("⬇️ Download CSV", csv, f"plan_{plan.location}.csv", "text/csv", use_container_width=True)
         
-        with col2:
-            json_data = json.dumps(export_data, indent=2).encode()
-            st.download_button("⬇️ Download JSON", json_data, f"plan_{plan.location}.json", "application/json", use_container_width=True)
+#         with col2:
+#             json_data = json.dumps(export_data, indent=2).encode()
+#             st.download_button("⬇️ Download JSON", json_data, f"plan_{plan.location}.json", "application/json", use_container_width=True)
         
-        st.markdown("---")
-        st.markdown("### 📋 Summary Text")
-        summary = f"""
-NAGPUR SUSTAINABLE AREA PLAN
-=============================
-Location     : {plan.location}
-Total Area   : {format_number(plan.total_area)} sq ft ({plan.total_area/43560:.1f} acres)
-Dev Type     : {plan.dev_type} | Priority: {plan.priority}
+#         st.markdown("---")
+#         st.markdown("### 📋 Summary Text")
+#         summary = f"""
+# NAGPUR SUSTAINABLE AREA PLAN
+# =============================
+# Location     : {plan.location}
+# Total Area   : {format_number(plan.total_area)} sq ft ({plan.total_area/43560:.1f} acres)
+# Dev Type     : {plan.dev_type} | Priority: {plan.priority}
 
-LAND USE
-  Residential  : {format_number(plan.residential_area)} sq ft ({plan.residential_area/plan.total_area*100:.1f}%)
-  Green Space  : {format_number(plan.green_space)} sq ft ({plan.green_space_pct:.1f}%)
-  Roads        : {format_number(plan.road_area)} sq ft ({plan.road_pct:.1f}%)
+# LAND USE
+#   Residential  : {format_number(plan.residential_area)} sq ft ({plan.residential_area/plan.total_area*100:.1f}%)
+#   Green Space  : {format_number(plan.green_space)} sq ft ({plan.green_space_pct:.1f}%)
+#   Roads        : {format_number(plan.road_area)} sq ft ({plan.road_pct:.1f}%)
 
-POPULATION
-  Estimated    : {format_number(plan.population)} people
-  Houses       : {format_number(plan.houses)}
-  Density      : {plan.density_ppsf:.4f} ppsf
+# POPULATION
+#   Estimated    : {format_number(plan.population)} people
+#   Houses       : {format_number(plan.houses)}
+#   Density      : {plan.density_ppsf:.4f} ppsf
 
-INFRASTRUCTURE
-  Schools      : {plan.schools}
-  Hospitals    : {plan.hospitals}
-  Parks        : {plan.parks}
-  Petrol Pumps : {plan.petrol_pumps}
-  Comm. Halls  : {plan.community_halls}
+# INFRASTRUCTURE
+#   Schools      : {plan.schools}
+#   Hospitals    : {plan.hospitals}
+#   Parks        : {plan.parks}
+#   Petrol Pumps : {plan.petrol_pumps}
+#   Comm. Halls  : {plan.community_halls}
 
-SUSTAINABILITY: {plan.sustainability_score:.0f}/100 | Grade: {plan.grade}
-COMPLIANCE    : {"PASS ✅" if plan.compliant else "FAIL ⚠"}
-"""
-        st.code(summary, language="text")
+# SUSTAINABILITY: {plan.sustainability_score:.0f}/100 | Grade: {plan.grade}
+# COMPLIANCE    : {"PASS ✅" if plan.compliant else "FAIL ⚠"}
+# """
+#         st.code(summary, language="text")
 
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("---")
