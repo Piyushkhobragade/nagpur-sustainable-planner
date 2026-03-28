@@ -422,25 +422,3 @@ PROFESSIONAL_CSS = """
     }
 }
 """
-
-# Force all main content text to be dark
-st.markdown("""
-<style>
-    /* Force all main content text to be black/dark */
-    .stMarkdown, .stMarkdown p, .stMarkdown div,
-    [data-testid="stTabs"] p, [data-testid="stTabs"] span,
-    [data-testid="stTabs"] [role="tab"] {
-        color: #1a2a1a !important;
-    }
-    
-    /* Keep selected tab white */
-    [data-testid="stTabs"] [role="tab"][aria-selected="true"] {
-        color: white !important;
-    }
-    
-    /* Metric values */
-    .stMetricValue, .stMetric label {
-        color: #1a2a1a !important;
-    }
-</style>
-""", unsafe_allow_html=True)
