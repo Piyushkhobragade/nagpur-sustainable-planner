@@ -108,6 +108,35 @@ st.markdown("""
         color: #1e2a1e !important;
         background: #ffffff !important;
     }
+
+    /* For mobile devices, make sidebar collapsible */
+@media (max-width: 768px) {
+    [data-testid="stSidebar"] {
+        position: fixed !important;
+        z-index: 1000 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+    }
+    
+    [data-testid="stSidebar"][aria-expanded="true"] {
+        transform: translateX(0) !important;
+    }
+
+    /* Add a toggle button */
+    .sidebar-toggle {
+        position: fixed;
+        left: 10px;
+        top: 70px;
+        z-index: 1001;
+        background: #1e4a3a;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+}
     
 </style>
 """, unsafe_allow_html=True)
