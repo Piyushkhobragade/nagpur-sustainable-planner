@@ -108,10 +108,11 @@ st.markdown("""
         color: #1e2a1e !important;
         background: #ffffff !important;
     }
-</style>
-""", unsafe_allow_html=True)
-
-# Export section - Force dark text 
+    
+    /* ============================================================
+       EXPORT SECTION - FORCE DARK TEXT
+       ============================================================ */
+    /* Code block (summary text) */
     .stCodeBlock,
     .stCodeBlock pre,
     .stCodeBlock code,
@@ -123,17 +124,24 @@ st.markdown("""
         background: #f5f5f5 !important;
     }
     
-# Download buttons text - Keep white on green 
+    /* Download buttons - Keep white text on green */
     .stDownloadButton button {
         color: white !important;
     }
     
-    /* Summary text area */
+    /* Text area for summary */
     .stTextArea textarea,
     .stTextArea [data-baseweb="textarea"] {
         color: #1e2a1e !important;
         background: #ffffff !important;
     }
+    
+    /* Headings in export tab */
+    .stMarkdown h3 {
+        color: #1e4a3a !important;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # ── Apply CSS ──────────────────────────────────────────────────────────────
 st.markdown(f"<style>{PROFESSIONAL_CSS}</style>", unsafe_allow_html=True)
