@@ -1,6 +1,6 @@
 """
 All CSS styles for the Nagpur Sustainable Area Planner
-FIXED: Force black text on all inputs
+FIXED: Streamlit Cloud Compatible - Force all text colors
 """
 
 PROFESSIONAL_CSS = """
@@ -18,13 +18,98 @@ PROFESSIONAL_CSS = """
 /* ============================================================
    SIDEBAR - Dark Background
    ============================================================ */
-[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #0a2b1f 0%, #0a3b25 100%);
-    border-right: none;
-    padding: 1rem;
+[data-testid="stSidebar"],
+[data-testid="stSidebar"] * {
+    background: linear-gradient(180deg, #0a2b1f 0%, #0a3b25 100%) !important;
+    border-right: none !important;
 }
 
-/* Sidebar Headings - White */
+/* ============================================================
+   CRITICAL FIX: FORCE BLACK TEXT ON ALL INPUTS
+   Using highest specificity with !important
+   ============================================================ */
+/* Number Input - Black text */
+[data-testid="stSidebar"] input,
+[data-testid="stSidebar"] input[type="number"],
+[data-testid="stSidebar"] .stNumberInput input,
+[data-testid="stSidebar"] .stNumberInput input[type="number"],
+div[data-testid="stSidebar"] input,
+div[data-testid="stSidebar"] .stNumberInput input {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    -webkit-text-fill-color: #000000 !important;
+    opacity: 1 !important;
+}
+
+/* Selectbox (Dropdown) */
+[data-testid="stSidebar"] select,
+[data-testid="stSidebar"] .stSelectbox select,
+div[data-testid="stSidebar"] select {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+}
+
+/* Streamlit's custom selectbox */
+[data-baseweb="select"] > div,
+[data-baseweb="select"] div[data-testid="stSelectbox"],
+[data-testid="stSidebar"] [data-baseweb="select"] div {
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 8px !important;
+}
+
+[data-baseweb="select"] div[data-testid="stMarkdownContainer"] p,
+[data-baseweb="select"] span {
+    color: #000000 !important;
+}
+
+/* Dropdown selected value */
+[data-baseweb="select"] [data-testid="stMarkdownContainer"] {
+    color: #000000 !important;
+}
+
+[data-baseweb="select"] span[data-testid="stMarkdownContainer"] {
+    color: #000000 !important;
+}
+
+/* Dropdown options popup */
+div[data-baseweb="popover"] {
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc !important;
+}
+
+div[data-baseweb="popover"] ul,
+div[data-baseweb="popover"] li,
+div[data-baseweb="popover"] div[role="option"] {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+div[data-baseweb="popover"] li:hover,
+div[data-baseweb="popover"] div[role="option"]:hover {
+    background-color: #e8f5e9 !important;
+}
+
+/* ============================================================
+   SIDEBAR LABELS - WHITE (Keep readable)
+   ============================================================ */
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] .stSlider label,
+[data-testid="stSidebar"] .stNumberInput label,
+[data-testid="stSidebar"] .stSelectbox label,
+[data-testid="stSidebar"] .stRadio label,
+[data-testid="stSidebar"] .stMarkdown p {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+/* Sidebar Headings */
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
 [data-testid="stSidebar"] h3,
@@ -34,91 +119,31 @@ PROFESSIONAL_CSS = """
     color: #ffffff !important;
 }
 
-/* Sidebar Labels - White */
-[data-testid="stSidebar"] label,
-[data-testid="stSidebar"] .stSlider label,
-[data-testid="stSidebar"] .stNumberInput label,
-[data-testid="stSidebar"] .stSelectbox label,
-[data-testid="stSidebar"] .stRadio label {
-    color: #ffffff !important;
-    font-weight: 500 !important;
-}
-
-/* ============================================================
-   FIX: ALL INPUT FIELDS - BLACK TEXT ON WHITE BACKGROUND
-   ============================================================ */
-/* Number Input */
-[data-testid="stSidebar"] .stNumberInput input {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #cccccc !important;
-    border-radius: 8px !important;
-    padding: 8px 12px !important;
-}
-
-/* Text Input */
-[data-testid="stSidebar"] input {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #cccccc !important;
-    border-radius: 8px !important;
-    padding: 8px 12px !important;
-}
-
-/* Selectbox (Dropdown) */
-[data-testid="stSidebar"] select {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #cccccc !important;
-    border-radius: 8px !important;
-    padding: 8px 12px !important;
-}
-
-/* Streamlit's custom selectbox */
-[data-testid="stSidebar"] [data-baseweb="select"] div {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #cccccc !important;
-    border-radius: 8px !important;
-}
-
-[data-testid="stSidebar"] [data-baseweb="select"] div div {
-    color: #000000 !important;
-}
-
-[data-testid="stSidebar"] [data-baseweb="select"] input {
-    color: #000000 !important;
-}
-
-/* Radio button text - White */
+/* Radio buttons text */
 [data-testid="stSidebar"] .stRadio label {
     color: #ffffff !important;
 }
 
-/* Slider text */
-[data-testid="stSidebar"] .stSlider {
-    color: #ffffff !important;
-}
-
-[data-testid="stSidebar"] .stSlider [data-baseweb="slider"] div[role="slider"] {
-    background: #51cf66 !important;
-}
-
-/* Caption text */
+/* Caption */
 [data-testid="stSidebar"] .stCaption {
     color: #cccccc !important;
 }
 
+/* Slider */
+[data-testid="stSidebar"] .stSlider [data-baseweb="slider"] div[role="slider"] {
+    background: #51cf66 !important;
+}
+
 /* Generate Button */
 [data-testid="stSidebar"] .stButton button {
-    background: linear-gradient(135deg, #51cf66 0%, #2b8c4a 100%);
+    background: linear-gradient(135deg, #51cf66 0%, #2b8c4a 100%) !important;
     color: white !important;
-    border: none;
-    border-radius: 12px;
-    padding: 12px 24px;
-    font-weight: 600;
-    font-size: 16px;
-    width: 100%;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    width: 100% !important;
 }
 
 /* Zone Info Card */
@@ -136,14 +161,15 @@ PROFESSIONAL_CSS = """
 }
 
 /* ============================================================
-   MAIN CONTENT AREA - Black text on light background
+   MAIN CONTENT AREA - Dark text on light background
    ============================================================ */
-/* All main content text should be dark */
-.main .stMarkdown,
-.main .stMarkdown p,
-.main .stMarkdown div,
-.main div[data-testid="stMarkdownContainer"] p,
-.main div[data-testid="stMarkdownContainer"] div {
+.main,
+.main *,
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown div,
+div[data-testid="stMarkdownContainer"],
+div[data-testid="stMarkdownContainer"] p {
     color: #1e1e1e !important;
 }
 
@@ -211,10 +237,6 @@ PROFESSIONAL_CSS = """
 }
 
 /* Tabs */
-[data-testid="stTabs"] {
-    background: transparent;
-}
-
 [data-testid="stTabs"] [role="tablist"] {
     gap: 4px;
     background: #eef2f5;
@@ -276,7 +298,7 @@ PROFESSIONAL_CSS = """
     margin-top: 20px;
 }
 
-/* Streamlit default metrics */
+/* Streamlit metrics */
 .stMetric {
     background: #ffffff;
     border-radius: 12px;
@@ -301,17 +323,24 @@ PROFESSIONAL_CSS = """
     color: #1e1e1e !important;
 }
 
-/* Dropdown popup options */
-div[data-baseweb="popover"] div {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(135deg, #0a2b1f 0%, #1e4a3a 50%, #2c6e4f 100%);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-div[data-baseweb="popover"] ul li {
-    color: #000000 !important;
+.hero-banner h1 {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0;
+    color: #fff;
 }
 
-div[data-baseweb="popover"] ul li:hover {
-    background-color: #e8f5e9 !important;
+.hero-banner p {
+    color: rgba(255,255,255,0.85);
+    margin: 8px 0 0 0;
+    font-size: 14px;
 }
 """
