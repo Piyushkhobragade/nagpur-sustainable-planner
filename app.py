@@ -111,7 +111,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-    /* Export section - Force dark text */
+/* Export section - Force dark text */
     .stCodeBlock,
     .stCodeBlock pre,
     .stCodeBlock code,
@@ -123,7 +123,7 @@ st.markdown("""
         background: #f5f5f5 !important;
     }
     
-    /* Download buttons text - Keep white on green */
+/* Download buttons text - Keep white on green */
     .stDownloadButton button {
         color: white !important;
     }
