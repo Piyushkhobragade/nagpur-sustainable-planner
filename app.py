@@ -109,27 +109,6 @@ st.markdown("""
         background: #ffffff !important;
     }
     
-   /* Export Tab - Force white text on light background */
-[data-testid="stTabs"] [role="tabpanel"] .stMarkdown h3,
-[data-testid="stTabs"] [role="tabpanel"] .stMarkdown p,
-[data-testid="stTabs"] [role="tabpanel"] .stMarkdown div,
-[data-testid="stTabs"] [role="tabpanel"] .stCodeBlock,
-[data-testid="stTabs"] [role="tabpanel"] .stCodeBlock pre,
-[data-testid="stTabs"] [role="tabpanel"] .stCodeBlock code {
-    color: white !important;
-    background: #1e4a3a !important;
-}
-
-/* Download buttons - Keep as is */
-.stDownloadButton button {
-    color: white !important;
-    background: linear-gradient(135deg, #51cf66, #2b8c4a) !important;
-}
-    
-    /* Headings in export tab */
-    .stMarkdown h3 {
-        color: #1e4a3a !important;
-    }
 </style>
 """, unsafe_allow_html=True)
 
