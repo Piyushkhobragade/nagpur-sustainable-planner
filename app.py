@@ -26,26 +26,87 @@ st.set_page_config(
     layout="wide",
 )
 
-# Force dark text in main content area
+# ── FIX: Correct text colors (dark where dark should be, light where light should be) ──
 st.markdown("""
 <style>
-    /* Force all main content text to be black */
-    .stMarkdown p, .stMarkdown div,
-    [data-testid="stTabs"] p, [data-testid="stTabs"] span,
-    [data-testid="stTabs"] [role="tab"] {
-        color: #1a2a1a !important;
+    /* Main content area - Dark text on light background */
+    .main .stMarkdown p,
+    .main .stMarkdown div,
+    .main [data-testid="stMarkdownContainer"] p,
+    .main [data-testid="stMarkdownContainer"] div {
+        color: #1e2a1e !important;
     }
     
+    /* Tab headers - Dark when inactive */
+    [data-testid="stTabs"] [role="tab"] {
+        color: #2c3e2c !important;
+        background: #eef2f5 !important;
+    }
+    
+    /* Tab headers - White when active/selected */
     [data-testid="stTabs"] [role="tab"][aria-selected="true"] {
         color: white !important;
+        background: #1e4a3a !important;
     }
     
-    .stMetricValue, .stMetric label {
-        color: #1a2a1a !important;
+    /* Tab content area - All text dark */
+    .stTabs [data-testid="stMarkdownContainer"],
+    .stTabs .stMarkdown,
+    .stTabs p,
+    .stTabs div {
+        color: #1e2a1e !important;
     }
     
-    .dataframe, .dataframe td, .dataframe th {
-        color: #1a2a1a !important;
+    /* Metric cards - Dark text */
+    .stMetric {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 10px;
+    }
+    
+    .stMetric label {
+        color: #5a6e5a !important;
+    }
+    
+    .stMetric .stMetricValue {
+        color: #1e4a3a !important;
+    }
+    
+    /* Dataframe - Dark text */
+    .dataframe,
+    .dataframe td,
+    .dataframe th {
+        color: #1e2a1e !important;
+        background: #ffffff !important;
+    }
+    
+    /* Plotly charts - Dark text */
+    .js-plotly-plot .plotly .main-svg text {
+        fill: #1e2a1e !important;
+    }
+    
+    /* Section headings */
+    .section-head {
+        color: #1e4a3a !important;
+    }
+    
+    /* Info/warning boxes - Dark text */
+    .stAlert p {
+        color: #1e2a1e !important;
+    }
+    
+    /* Sidebar - Keep as is (dark background, white text) */
+    [data-testid="stSidebar"] .stMarkdown p,
+    [data-testid="stSidebar"] label {
+        color: #e8f0e8 !important;
+    }
+    
+    /* Sidebar inputs - White background, dark text */
+    [data-testid="stSidebar"] input,
+    [data-testid="stSidebar"] select,
+    [data-testid="stSidebar"] [data-baseweb="select"] div {
+        color: #1e2a1e !important;
+        background: #ffffff !important;
     }
 </style>
 """, unsafe_allow_html=True)
