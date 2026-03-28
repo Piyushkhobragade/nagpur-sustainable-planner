@@ -26,48 +26,26 @@ st.set_page_config(
     layout="wide",
 )
 
-# FIX: Force light theme on Streamlit Cloud
+# Force dark text in main content area
 st.markdown("""
 <style>
-    /* Force light theme background */
-    .stApp {
-        background: #f5f7fa !important;
+    /* Force all main content text to be black */
+    .stMarkdown p, .stMarkdown div,
+    [data-testid="stTabs"] p, [data-testid="stTabs"] span,
+    [data-testid="stTabs"] [role="tab"] {
+        color: #1a2a1a !important;
     }
     
-    /* Force all inputs to have black text */
-    input, .stTextInput input, .stNumberInput input, 
-    select, .stSelectbox select,
-    [data-baseweb="select"] div,
-    [data-baseweb="select"] span {
-        color: #000000 !important;
-        background-color: #ffffff !important;
-        -webkit-text-fill-color: #000000 !important;
+    [data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+        color: white !important;
     }
     
-    /* Force dropdown options to have black text */
-    div[data-baseweb="popover"] div,
-    div[role="listbox"] div {
-        color: #000000 !important;
-        background-color: #ffffff !important;
+    .stMetricValue, .stMetric label {
+        color: #1a2a1a !important;
     }
     
-    /* Force sidebar to stay dark (your design) */
-    [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #0a2b1f 0%, #0a3b25 100%) !important;
-    }
-    
-    /* Sidebar text white */
-    [data-testid="stSidebar"] label,
-    [data-testid="stSidebar"] .stMarkdown p {
-        color: #ffffff !important;
-    }
-    
-    /* Sidebar inputs - white background, black text */
-    [data-testid="stSidebar"] input,
-    [data-testid="stSidebar"] select,
-    [data-testid="stSidebar"] [data-baseweb="select"] div {
-        background-color: #ffffff !important;
-        color: #000000 !important;
+    .dataframe, .dataframe td, .dataframe th {
+        color: #1a2a1a !important;
     }
 </style>
 """, unsafe_allow_html=True)
